@@ -30,6 +30,11 @@ class Category(models.Model):
         return self.name
 
 
+class Project(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=500)
+    category = models.ForeignKey(Category,on_delete=models.CASCADE)
+
 class ContactInfo(models.Model):
     name = models.CharField(max_length=100)
     number = models.BigIntegerField()
