@@ -64,7 +64,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-2">
-                        <div id="fh5co-logo"><a href="index.html"><span><img src="{% static 'images/logo.png' %}" width="100"></span></a></div>
+                        <div id="fh5co-logo"><a href="index.html"><span><img src="{% static 'images/logo.png' %}"
+                                                                             width="100"></span></a></div>
                     </div>
                     <div class="col-xs-10 text-right menu-1">
                         <ul>
@@ -84,8 +85,7 @@
                             <li class="btn-cta"><a href="#"><span>Login</span></a></li>
                         </ul>
                     </div>
-                </div>F
-
+                </div>
             </div>
         </div>
     </nav>
@@ -99,7 +99,7 @@
                     <div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
                             <h1>Its my design</h1>
-                            <h2>Sub title  <a href="#" target="_blank"> Sub</a>
+                            <h2>Sub title <a href="#" target="_blank"> Sub</a>
                             </h2>
                         </div>
                     </div>
@@ -119,70 +119,16 @@
             </div>
         </div>
         <div class="project-content">
-            <div class="col-forth">
-                <div class="project animate-box" style="background-image:url({% static 'images/project-8.jpg' %});">
-                    <a href="#" class="desc">
-                        <span>Application</span>
-                        <h3>Project Name</h3>
-                    </a>
+            {% for   category in all_category %}
+                <div class="col-forth" style="width:{{ width_percent }}%">
+                    <div class="project animate-box" style="background-image:url({{ category.logo.url }});">
+                        <a href="#" class="desc">
+                            <span>Application</span>
+                            <h3>{{ category.name }}</h3>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-forth">
-                <div class="project animate-box" style="background-image:url({% static 'images/project-1.jpg' %});">
-                    <a href="#" class="desc">
-                        <span>Application</span>
-                        <h3>Project Name</h3>
-                    </a>
-                </div>
-            </div>
-            <div class="col-forth">
-                <div class="project animate-box" style="background-image:url({% static 'images/project-2.jpg' %});">
-                    <a href="#" class="desc">
-                        <span>Application</span>
-                        <h3>Project Name</h3>
-                    </a>
-                </div>
-            </div>
-            <div class="col-forth">
-                <div class="project animate-box" style="background-image:url({% static 'images/project-3.jpg' %});">
-                    <a href="#" class="desc">
-                        <span>Application</span>
-                        <h3>Project Name</h3>
-                    </a>
-                </div>
-            </div>
-            <div class="col-forth">
-                <div class="project animate-box" style="background-image:url({% static 'images/project-4.jpg' %});">
-                    <a href="#" class="desc">
-                        <span>Application</span>
-                        <h3>Project Name</h3>
-                    </a>
-                </div>
-            </div>
-            <div class="col-forth">
-                <div class="project animate-box" style="background-image:url({% static 'images/project-5.jpg' %});">
-                    <a href="#" class="desc">
-                        <span>Application</span>
-                        <h3>Project Name</h3>
-                    </a>
-                </div>
-            </div>
-            <div class="col-forth">
-                <div class="project animate-box" style="background-image:url({% static 'images/project-6.jpg' %});">
-                    <a href="#" class="desc">
-                        <span>Application</span>
-                        <h3>Project Name</h3>
-                    </a>
-                </div>
-            </div>
-            <div class="col-forth">
-                <div class="project animate-box" style="background-image:url({% static 'images/project-7.jpg' %});">
-                    <a href="#" class="desc">
-                        <span>Application</span>
-                        <h3>Project Name</h3>
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
