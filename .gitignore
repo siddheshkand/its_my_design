@@ -2,3 +2,5 @@
 *.xml
 *.iml
 .idea*
+Content/animation*
+Content/material*
