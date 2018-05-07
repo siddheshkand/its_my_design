@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6, figure {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(76, 74, 138, 0.9);
+    background: rgba(77, 76, 78, 0.9);
 }
 
 .fh5co-cover > .fh5co-container {
@@ -663,6 +663,31 @@ h1, h2, h3, h4, h5, h6, figure {
     }
 }
 
+/*custom styles*/
+#fh5co-project {
+    background: #efefef;
+}
+
+.project-content {
+    background: #efefef;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+
+.project {
+    width: 200px;
+    height: 200px !important;
+}
+
+.desc {
+    height: 60px;
+}
+
+.project {
+    margin: 0 auto;
+}
+
+/*custom styles end*/
 .iphone {
     width: 80%;
     margin: 0 auto;
@@ -1002,7 +1027,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-started {
-    background: rgba(76, 74, 138, 0.9);
+    background: rgba(77, 76, 78, 0.9);
 }
 
 #fh5co-started .fh5co-heading {

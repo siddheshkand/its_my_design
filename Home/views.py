@@ -9,5 +9,5 @@ def home_page(request):
     all_category = Category.objects.filter(is_active=True)
     return render(request, "home.html", {
         'all_category': all_category,
-        'width_percent': 25
+        'width_percent': 20
     })
