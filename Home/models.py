@@ -4,8 +4,10 @@ from django.db import models
 
 def category_icon_path(instance, filename):
     extension = filename.split('.')
-    extension = extension [extension .len()-1]
-    return 'Media/Categories/{0}/{1}.{2}'.format(instance.name,instance.name,extension)
+    extension = extension[len(extension) - 1]
+    name = instance.name
+    name = name.replace(" ","")
+    return 'Media/Categories/{0}/{1}.{2}'.format(name, name, extension)
 
 
 class DayHit(models.Model):
