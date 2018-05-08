@@ -775,6 +775,8 @@ h1, h2, h3, h4, h5, h6, figure {
 @media screen and (max-width: 480px) {
     .project-content .col-forth {
         width: 100% !important;
+            height: 340px !important;
+
     }
 }
 
@@ -831,7 +833,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 @media screen and (max-width: 480px) {
     .project-content .col-forth .project {
-        height: 340px !important;
+        height: 200px !important;
         margin-bottom: 20px;
     }
 }
