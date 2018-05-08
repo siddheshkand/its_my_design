@@ -3,7 +3,9 @@ from django.db import models
 
 
 def category_icon_path(instance, filename):
-    return 'Media/Categories/{0}/{1}'.format(instance.name, filename)
+    extension = filename.split('.')
+    extension = extension [extension .len()-1]
+    return 'Media/Categories/{0}/{1}.{2}'.format(instance.name,instance.name,extension)
 
 
 class DayHit(models.Model):
@@ -33,7 +35,8 @@ class Category(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
-    category = models.ForeignKey(Category,on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
 
 class ContactInfo(models.Model):
     name = models.CharField(max_length=100)
