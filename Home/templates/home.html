@@ -82,7 +82,6 @@
                                 </ul>
                             </li>
                             <li><a href="contact.html">Contact</a></li>
-                            <li class="btn-cta"><a href="#"><span>Login</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -99,7 +98,7 @@
                     <div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
                             <h1>Its my design</h1>
-                            <h2>Sub title <a href="#" target="_blank"> Sub</a>
+                            <h2>If you can imagine it, <a>we can design it</a>
                             </h2>
                         </div>
                     </div>
@@ -121,10 +120,11 @@
         <div class="project-content">
             {% for   category in all_category %}
                 <div class="col-forth" style="width:{{ width_percent }}%">
-                    <div class="project animate-box" style="background-image:url({{ category.logo.url }});">
+                    <div class="project animate-box"
+                         style="background-image:url({{ category.logo.url }});background-size:150px;background-color: #cdcdcd;
+                                 ">
                         <a href="#" class="desc">
-                            <span>Application</span>
-                            <h3>{{ category.name }}</h3>
+                            <h4>{{ category.name }}</h4>
                         </a>
                     </div>
                 </div>
@@ -171,7 +171,6 @@
 
                 <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
                     <ul class="fh5co-footer-links">
-                        <li><a href="#">Shop</a></li>
                         <li><a href="#">Privacy</a></li>
                         <li><a href="#">Testimonials</a></li>
                         <li><a href="#">Handbook</a></li>
@@ -184,8 +183,6 @@
                         <li><a href="#">Find Designers</a></li>
                         <li><a href="#">Find Developers</a></li>
                         <li><a href="#">Teams</a></li>
-                        <li><a href="#">Advertise</a></li>
-                        <li><a href="#">API</a></li>
                     </ul>
                 </div>
             </div>
@@ -195,7 +192,7 @@
                     <p>
                         <small class="block">&copy; 2018 Its My Design. All Rights Reserved.</small>
                         <small class="block">Designed by <a href="#" target="_blank">Its My Design</a>
-                            Demo Images: <a href="#" target="_blank">Unsplash</a></small>
+                        </small>
                     </p>
                     <p>
                     <ul class="fh5co-social-icons">
