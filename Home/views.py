@@ -15,12 +15,14 @@ def home_page(request):
 def work(request):
     # This code takes the path and gets the last part of url
     # ie. work/logo design => logo desin
-    project_type_name = request.path
-    project_type_name = project_type_name.split('/')
+
+    category = request.GET.get('category')
 
     # all category same as above
-    all_category = Category.objects.filter(is_active=True)
+    # all_category = Category.objects.filter(is_active=True)
+    category_obj = Category.objects.get(name=category)
+    projects = category_obj.project_set.all()
     return render(request, "work.html", {
-        'project_type_name': project_type_name[2],
-        'all_category': all_category,
+        'project_type_name': category,
+        'all_category': projects,
     })

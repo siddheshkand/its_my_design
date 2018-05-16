@@ -158,8 +158,9 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="{% static 'images/project-1.jpg' %}"
+                <video src="{% static 'video/promo.mp4' %}"
                      style="width: 100%; height: fit-content" autoplay loop muted>
+                </video>
             </div>
             <div class="item">
                 <img src="{% static 'images/project-2.jpg' %}"
@@ -200,7 +201,7 @@
                     <div class="project animate-box"
                          style="background-image:url({{ category.logo.url }});background-size:150px;background-color: #cdcdcd;
                                  ">
-                        <a href="/work/{{ category.name }}" class="desc">
+                        <a href="/work/?category={{ category.name }}" class="desc">
                             <h4>{{ category.name }}</h4>
                         </a>
                     </div>

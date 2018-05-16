@@ -10,6 +10,14 @@ def category_icon_path(instance, filename):
     return 'Media/Categories/{0}/{1}.{2}'.format(name, name, extension)
 
 
+def project_media_path(instance, filename):
+    extension = filename.split('.')
+    extension = extension[len(extension) - 1]
+    name = instance.name
+    name = name.replace(" ", "")
+    return 'Media/Categories/{0}/{1}/{3}.{4}'.format(instance.category.name, name, name, extension)
+
+
 class DayHit(models.Model):
     hits = models.IntegerField(default=0)
     date = models.DateField()
@@ -39,6 +47,7 @@ class Project(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    media = models.ImageField()
 
 
 class ContactInfo(models.Model):
