@@ -6,7 +6,7 @@ def category_icon_path(instance, filename):
     extension = filename.split('.')
     extension = extension[len(extension) - 1]
     name = instance.name
-    name = name.replace(" ","")
+    name = name.replace(" ", "")
     return 'Media/Categories/{0}/{1}.{2}'.format(name, name, extension)
 
 
@@ -29,9 +29,10 @@ class Category(models.Model):
     is_active = models.BooleanField(default=True)
     created_date = models.DateField()
     logo = models.ImageField(upload_to=category_icon_path)
+    rank = models.PositiveIntegerField(null=True)
 
     def __str__(self):
-        return self.name
+        return self.name + ' ' + str(self.rank)
 
 
 class Project(models.Model):
