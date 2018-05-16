@@ -6,8 +6,16 @@ def category_icon_path(instance, filename):
     extension = filename.split('.')
     extension = extension[len(extension) - 1]
     name = instance.name
-    name = name.replace(" ","")
+    name = name.replace(" ", "")
     return 'Media/Categories/{0}/{1}.{2}'.format(name, name, extension)
+
+
+def project_media_path(instance, filename):
+    extension = filename.split('.')
+    extension = extension[len(extension) - 1]
+    name = instance.name
+    name = name.replace(" ", "")
+    return 'Media/Categories/{0}/{1}/{3}.{4}'.format(instance.category.name, name, name, extension)
 
 
 class DayHit(models.Model):
@@ -29,15 +37,17 @@ class Category(models.Model):
     is_active = models.BooleanField(default=True)
     created_date = models.DateField()
     logo = models.ImageField(upload_to=category_icon_path)
+    rank = models.PositiveIntegerField(null=True)
 
     def __str__(self):
-        return self.name
+        return self.name + ' ' + str(self.rank)
 
 
 class Project(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    media = models.ImageField()
 
 
 class ContactInfo(models.Model):
