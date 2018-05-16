@@ -127,8 +127,8 @@
         </div>
         <div class="container">
             {% for   category in all_category %}
-                <div class="col-forth card" style="width:{{ width_percent }}%;">
-                    <img src="{{ category.logo.url }}" width="90px"><br>
+                <div class="col-forth card" style="width:{{ width_percent }}%;"><img src="{{ category.logo.url }}"
+                                                                                     width="90px"><br>
                     <p style="  overflow-wrap: break-word; ">{{ category.name }}</p>
                 </div>
             {% endfor %}
