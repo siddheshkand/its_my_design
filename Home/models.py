@@ -28,7 +28,7 @@ class SiteDetail(models.Model):
 
 
 class Log(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     time_stamp = models.DateTimeField()
 
 
@@ -45,9 +45,12 @@ class Category(models.Model):
 
 class Project(models.Model):
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=500)
+    description = models.CharField(max_length=500,blank=True,null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     media = models.ImageField()
+
+    def __str__(self):
+        return self.category.name + '-' + self.name
 
 
 class ContactInfo(models.Model):
