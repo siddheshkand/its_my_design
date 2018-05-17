@@ -15,7 +15,7 @@ def project_media_path(instance, filename):
     extension = extension[len(extension) - 1]
     name = instance.name
     name = name.replace(" ", "")
-    return 'Media/Categories/{0}/{1}/{2}.{3}'.format(instance.category.name, name, name, extension)
+    return 'Media/Categories/{0}/{1}/{2}.{3}'.format(instance.category.name.replace(" ",""), name, name, extension)
 
 
 class DayHit(models.Model):
@@ -45,9 +45,9 @@ class Category(models.Model):
 
 class Project(models.Model):
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=500,blank=True,null=True)
+    description = models.CharField(max_length=500, blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    media = models.ImageField()
+    media = models.ImageField(upload_to=project_media_path)
 
     def __str__(self):
         return self.category.name + '-' + self.name
