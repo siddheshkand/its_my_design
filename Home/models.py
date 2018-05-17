@@ -15,7 +15,7 @@ def project_media_path(instance, filename):
     extension = extension[len(extension) - 1]
     name = instance.name
     name = name.replace(" ", "")
-    return 'Media/Categories/{0}/{1}/{2}.{3}'.format(instance.category.name, name, name, extension)
+    return 'Media/Categories/{0}/{1}/{2}.{3}'.format(instance.category.name.replace(" ",""), name, name, extension)
 
 
 class DayHit(models.Model):
