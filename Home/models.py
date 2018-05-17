@@ -28,7 +28,7 @@ class SiteDetail(models.Model):
 
 
 class Log(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     time_stamp = models.DateTimeField()
 
 
