@@ -21,3 +21,11 @@ def work(request):
         'project_type_name': category,
         'all_category': projects,
     })
+
+
+def about(request):
+    return render(request, "about.html")
+
+
+def contact(request):
+    return render(request, "contact.html")

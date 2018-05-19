@@ -74,6 +74,20 @@
             font-size: 36px;
         }
 
+        .nav-link {
+            color: white !important;
+            font-weight: 900;
+        }
+
+        .hover-style :hover {
+            background-color: #ff0082;
+            color: white!important;
+
+        .hover-none{
+
+        }
+
+
     </style>
 </head>
 <body>
@@ -111,10 +125,10 @@
                     <div class="col-xs-10 text-right menu-1">
                         <ul>
                             <!-- <li class="active"><a href="index.html">Home</a></li> -->
-                            <li class="active"><a href="home.html">Work</a></li>
-                            <li><a href="work.html">About</a></li>
+                            <li><a href="#" class="nav-link">Work</a></li>
+                            <li><a href="work.html" class="nav-link">About</a></li>
                             <li class="has-dropdown">
-                                <a href="services.html">Services</a>
+                                <a href="#" class="nav-link">Services</a>
                                 <ul class="dropdown">
                                     <li><a href="#">Web Design</a></li>
                                     <li><a href="#">eCommerce</a></li>
@@ -122,7 +136,7 @@
                                     <li><a href="#">API</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="" class="nav-link">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -169,7 +183,7 @@
 
             <div class="item">
                 <img src="{% static 'images/project-3.jpg' %}"
-                     style="width: 100%;height: fit-content;">
+                     style="width: 1366px;height: 600px;object-fit: cover;">
             </div>
         </div>
 
@@ -199,10 +213,10 @@
         <div class="project-content">
             {% for   category in all_category %}
                 <div class="col-forth" style="width:{{ width_percent }}%">
-                    <div class="project animate-box"
+                    <div class="project animate-box hover-style"
                          style="background-image:url({{ category.logo.url }});background-size:150px;background-color: #cdcdcd;
                                  ">
-                        <a href="/work/?category={{ category.name }}" class="desc">
+                        <a href="/work/?category={{ category.name }}" class="desc hover-none">
                             <h4>{{ category.name }}</h4>
                         </a>
                     </div>
@@ -356,7 +370,7 @@
     // Counter
     jQuery('.statistic-counter').counterUp({
         delay: 30,
-        time: 2000
+        time: 14000
     });
 </script>
 </body>
