@@ -51,10 +51,10 @@ class Project(models.Model):
     media = models.FileField(upload_to=project_media_path)
     media_type = models.BooleanField(default=0)
 
-    def save(self, *args, **kwargs):
-        video_extensions = ['.mp4', '.mov', '.avi', '.mpg', '.wmv']
-        image_extensions = ['.jpeg', '.jpg', '.png']
-        extension = self.media.split('.')
+    def clean(self):
+        video_extensions = ['mp4', 'mov', 'avi', 'mpg', 'wmv']
+        image_extensions = ['jpeg', 'jpg', 'png']
+        extension = self.media.name.split('.')
         extension = extension[len(extension) - 1]
         if extension in video_extensions:
             self.media_type = 1
@@ -62,7 +62,6 @@ class Project(models.Model):
             self.media_type = 0
         else:
             raise ValidationError(u'Unsupported file extension.')
-        models.Model.save(self, *args, **kwargs)
 
     def __str__(self):
         return self.category.name + '-' + self.name
