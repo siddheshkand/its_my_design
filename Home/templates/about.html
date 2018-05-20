@@ -52,9 +52,9 @@
                     <div class="col-xs-12 text-right">
                         <p class="num">Call: +01 123 456 7890</p>
                         <ul class="fh5co-social">
-                            <li><a href="#"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                            <li><a href="#"><i class="icon-github"></i></a></li>
+                            <li><a href="#"><i class="icon-twitter" style="color: #1baae1;"></i></a></li>
+                            <li><a href="#"><i class="icon-dribbble" style="color:#ea4c89;"></i></a></li>
+                            <li><a href="#"><i class="icon-github" style="color: #211F1F;"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -74,20 +74,10 @@
                     </div>
                     <div class="col-xs-10 text-right menu-1">
                         <ul>
-                            <!-- <li class="active"><a href="index.html">Home</a></li> -->
-                            <li><a href="work.html">Work</a></li>
-                            <li class="active"><a href="about.html">About</a></li>
-                            <li class="has-dropdown">
-                                <a href="">Services</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Web Design</a></li>
-                                    <li><a href="#">eCommerce</a></li>
-                                    <li><a href="#">Branding</a></li>
-                                    <li><a href="#">API</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li class="btn-cta"><a href="#"><span>Login</span></a></li>
+                            <li><a href="{% url 'home:home_page' %}" class="nav-link">Home</a></li>
+                            <li><a href="{% url 'home:home_page' %}#fh5co-project" class="nav-link">Work</a></li>
+                            <li><a href="{% url 'home:about' %}" class="nav-link">About us</a></li>
+                            <li><a href="{% url 'home:contact' %}" class="nav-link">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -206,13 +196,13 @@
             <div class="row animate-box">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                     <h2>Lets Get Started</h2>
-                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident.
-                        Odit ab aliquam dolor eius.</p>
+                    <p>First here contact us, we are here to help. </p>
+                    <p>Know our services and pricing plans,ask any queries or report problem </p>
                 </div>
             </div>
             <div class="row animate-box">
                 <div class="col-md-8 col-md-offset-2 text-center">
-                    <p><a href="#" class="btn btn-default btn-lg">Get in Touch</a></p>
+                    <p><a href="{% url 'home:contact' %}" class="btn btn-default btn-lg">Get in Touch</a></p>
                 </div>
             </div>
         </div>
@@ -223,9 +213,9 @@
             <div class="row row-pb-md">
                 <div class="col-md-4 fh5co-widget">
                     <h3>A Little About Its My Design.</h3>
-                    <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta
-                        adipisci architecto culpa amet.</p>
-                    <p><a class="btn btn-primary btn-outline with-arrow" href="#">Learn More <i
+                    <p>Its My Design is one of the leading company in design industry.Providing high quality solution
+                        for your brand. </p>
+                    <p><a class="btn btn-primary btn-outline with-arrow" href="{% url 'home:about' %}">Learn More <i
                             class="icon-arrow-right"></i></a></p>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
@@ -268,10 +258,10 @@
                     </p>
                     <p>
                     <ul class="fh5co-social-icons">
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter" style="color: #1baae1;"></i></a></li>
+                        <li><a href="#"><i class="icon-facebook" style="color: #3b5998;"></i></a></li>
+                        <li><a href="#"><i class="icon-linkedin" style="color: #4875b4;"></i></a></li>
+                        <li><a href="#"><i class="icon-dribbble" style="color:#ea4c89; "></i></a></li>
                     </ul>
                     </p>
                 </div>

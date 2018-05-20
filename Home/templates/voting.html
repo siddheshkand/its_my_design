@@ -4,11 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Its my Design</title>
+    <title>Its My Design</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
+    <meta name="keywords"
+          content=""/>
     <meta name="author" content=""/>
+
 
     <!-- Facebook and Twitter integration -->
     <meta property="og:title" content=""/>
@@ -20,7 +22,6 @@
     <meta name="twitter:image" content=""/>
     <meta name="twitter:url" content=""/>
     <meta name="twitter:card" content=""/>
-
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
 
     <!-- Animate.css -->
@@ -29,19 +30,17 @@
     <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
-
     <!-- Theme style  -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
     <!-- Modernizr JS -->
     <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+
+
 </head>
 <body>
-
 <div class="fh5co-loader"></div>
 
 <div id="page">
@@ -52,75 +51,64 @@
                     <div class="col-xs-12 text-right">
                         <p class="num">Call: +01 123 456 7890</p>
                         <ul class="fh5co-social">
-                            <li><a href="#"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                            <li><a href="#"><i class="icon-github"></i></a></li>
+                            <li><a href="#"><i class="icon-twitter" style="color: #1baae1;"></i></a></li>
+                            <li><a href="#"><i class="icon-dribbble" style="color:#ea4c89;"></i></a></li>
+                            <li><a href="#"><i class="icon-github" style="color: #211F1F;"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!--    Navvigation -->
         <div class="top-menu">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-2">
-                        <div id="fh5co-logo"><a href="index.html"><span><img src="{% static 'images/logo.png' %}"
-                                                                             width="100"></span></a></div>
+                        <div id="fh5co-logo">
+                            <a href="/">
+                                <span>
+                                    <img src="{% static 'images/logo.png' %}" width="100">
+                                </span>
+                            </a>
+                        </div>
                     </div>
                     <div class="col-xs-10 text-right menu-1">
                         <ul>
-                            <!-- <li class="active"><a href="index.html">Home</a></li> -->
-                            <li class="active"><a href="home.html">Work</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li class="has-dropdown">
-                                <a href="services.html">Services</a>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="{% url 'home:home_page' %}" class="nav-link">Home</a></li>
+                            <li><a href="{% url 'home:home_page' %}#fh5co-project" class="nav-link">Work</a></li>
+                            <li><a href="{% url 'home:about' %}" class="nav-link">About us</a></li>
+                            <li><a href="{% url 'home:contact' %}" class="nav-link">Contact</a></li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </nav>
 
-
-    <div id="fh5co-project">
+    <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner"
+            style="background-image:url('{% static 'images/privacy.jpg' %}');">
+        <div class="overlay"></div>
         <div class="container">
-            <div class="row animate-box">
-                <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-                    <h2>Business Card Design</h2>
-                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident.
-                        Odit ab aliquam dolor eius.</p>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                            <h1>Voting project are confidential and cant be showcased,we hope you understand </h1>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="project-content">
-            {% for   category in all_category %}
-                <div class="" style="width:{{ width_percent }}%">
-                    <div class="project animate-box"
-                         style="background-image:url({{ category.logo.url }});background-size:150px;background-color: #cdcdcd;
-                                 ">
-                        <a href="#" class="desc">
-                        <h4>{{ category.name }}</h4>
-                        </a>
-                    </div>
-                </div>
-            {% endfor %}
-            <img src="{% static 'images/img_bg_1.jpg' %}" class="col-forth" style="width: 20%">
-        </div>
-    </div>
-    <div class="col-forth">
-    </div>
-
+    </header>
     <footer id="fh5co-footer" role="contentinfo">
         <div class="container">
             <div class="row row-pb-md">
                 <div class="col-md-4 fh5co-widget">
                     <h3>A Little About Its My Design.</h3>
-                    <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta
-                        adipisci architecto culpa amet.</p>
-                    <p><a class="btn btn-primary btn-outline with-arrow" href="#">Learn More <i
+                    <p>Its My Design is one of the leading company in design industry.Providing high quality solution
+                        for your brand. </p>
+                    <p><a class="btn btn-primary btn-outline with-arrow" href="{% url 'home:about' %}">Learn More <i
                             class="icon-arrow-right"></i></a></p>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
@@ -135,6 +123,7 @@
 
                 <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
                     <ul class="fh5co-footer-links">
+                        <li><a href="#">Shop</a></li>
                         <li><a href="#">Privacy</a></li>
                         <li><a href="#">Testimonials</a></li>
                         <li><a href="#">Handbook</a></li>
@@ -147,6 +136,8 @@
                         <li><a href="#">Find Designers</a></li>
                         <li><a href="#">Find Developers</a></li>
                         <li><a href="#">Teams</a></li>
+                        <li><a href="#">Advertise</a></li>
+                        <li><a href="#">API</a></li>
                     </ul>
                 </div>
             </div>
@@ -160,10 +151,10 @@
                     </p>
                     <p>
                     <ul class="fh5co-social-icons">
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter" style="color: #1baae1;"></i></a></li>
+                        <li><a href="#"><i class="icon-facebook" style="color: #3b5998;"></i></a></li>
+                        <li><a href="#"><i class="icon-linkedin" style="color: #4875b4;"></i></a></li>
+                        <li><a href="#"><i class="icon-dribbble" style="color:#ea4c89; "></i></a></li>
                     </ul>
                     </p>
                 </div>
@@ -191,7 +182,5 @@
 <script src="{% static 'js/owl.carousel.min.js' %}"></script>
 <!-- Main -->
 <script src="{% static 'js/main.js' %}"></script>
-
 </body>
 </html>
-
