@@ -19,6 +19,10 @@ def project_media_path(instance, filename):
     return 'Media/Categories/{0}/{1}/{2}.{3}'.format(instance.category.name.replace(" ", ""), name, name, extension)
 
 
+class Carousel(models.Model):
+    name = models.CharField(max_length=50,null=True)
+
+
 class DayHit(models.Model):
     hits = models.IntegerField(default=0)
     date = models.DateField()
