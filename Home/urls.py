@@ -12,5 +12,6 @@ urlpatterns = [
     url('^about/', views.about, name='about'),
     url('^contact/', views.contact, name='contact'),
     url('^404/',views.page_not_found,name='404'),
-    url('^voting/',views.voting,name='voting')
+    url('^voting/',views.voting,name='voting'),
+    url('^send_mail/',views.query,name='query')
 ]

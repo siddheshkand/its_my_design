@@ -112,53 +112,70 @@
                         <ul>
                             <li class="address">Pune</li>
                             <li class="phone"><a href="tel://1234567920">+ 1235 2355 98</a></li>
-                            <li class="email"><a href="mailto:itsmydesign.in@gmail.com">itsmydesign.in@gmail.com</a></li>
+                            <li class="email"><a href="mailto:itsmydesign.in@gmail.com">itsmydesign.in@gmail.com</a>
+                            </li>
                         </ul>
                     </div>
 
                 </div>
-                <div class="col-md-6 animate-box">
-                    <h3>Get In Touch</h3>
-                    <form action="#">
-                        <div class="row form-group">
-                            <div class="col-md-6">
-                                <!-- <label for="fname">First Name</label> -->
-                                <input type="text" id="fname" class="form-control" placeholder="Your firstname">
+                <form method="post" action="{% url 'home:query' %}">
+                    <div class="col-md-6 animate-box">
+                        <h3>Get In Touch</h3>
+                        <form action="#">
+                            <div class="row form-group">
+                                <div class="col-md-6">
+                                    <!-- <label for="fname">First Name</label> -->
+                                    <input type="text" id="fname" name="fname" class="form-control"
+                                           placeholder="Your firstname">
+                                </div>
+                                <div class="col-md-6">
+                                    <!-- <label for="lname">Last Name</label> -->
+                                    <input type="text" id="lname" name="lname" class="form-control"
+                                           placeholder="Your lastname">
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <!-- <label for="lname">Last Name</label> -->
-                                <input type="text" id="lname" class="form-control" placeholder="Your lastname">
-                            </div>
-                        </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <!-- <label for="email">Email</label> -->
-                                <input type="text" id="email" class="form-control" placeholder="Your email address">
-                            </div>
-                        </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <!-- <label for="subject">Subject</label> -->
-                                <input type="text" id="subject" class="form-control"
-                                       placeholder="Your subject of this message">
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <!-- <label for="email">Email</label> -->
+                                    <input required type="email" id="email" name="email" class="form-control"
+                                           placeholder="Your email address">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                <!-- <label for="message">Message</label> -->
-                                <textarea name="message" id="message" cols="30" rows="10" class="form-control"
-                                          placeholder="Say something about us"></textarea>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <!-- <label for="subject">Subject</label> -->
+                                    <input list="categories" type="text" id="subject" name="subject"
+                                           class="form-control"
+                                           placeholder="Your subject of this message">
+
+                                    <datalist id="categories">
+                                        <option value="Logo Design">
+                                        <option value="Business Card">
+                                        <option value="3d Graphics and Animation">
+                                        <option value="Web Design">
+                                        <option value="Election">
+                                        <option value="Combo Pack (Website, Logo, Animation)">
+                                    </datalist>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Send Message" class="btn btn-primary">
-                        </div>
 
-                    </form>
-                </div>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <!-- <label for="message">Message</label> -->
+                                    <textarea name="message" id="message" cols="30" rows="10" class="form-control"
+                                              placeholder="Decription that will help us to guide you in the right direction."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Send Message" class="btn btn-primary">
+                            </div>
+
+                        </form>
+                    </div>
+                </form>
             </div>
 
         </div>
@@ -168,7 +185,7 @@
         <div class="container">
             <div class="row row-pb-md">
                 <div class="col-md-4 fh5co-widget">
-                   <h3>A Little About Its My Design.</h3>
+                    <h3>A Little About Its My Design.</h3>
                     <p>Its My Design is one of the leading company in design industry.Providing high quality solution
                         for your brand. </p>
                     <p><a class="btn btn-primary btn-outline with-arrow" href="{% url 'home:about' %}">Learn More <i
@@ -230,6 +247,7 @@
 <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 </div>
+
 
 <!-- jQuery -->
 <script src="{% static 'js/jquery.min.js' %}"></script>

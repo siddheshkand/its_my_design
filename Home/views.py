@@ -1,7 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 # Create your views here.
-from Home.models import Category
+from Home.models import Category, Query
 
 
 def home_page(request):
@@ -37,3 +37,20 @@ def page_not_found(request):
 
 def voting(request):
     return render(request, 'voting.html')
+
+
+def query(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        fname = request.POST.get('fname')
+        lname = request.POST.get('lname')
+        subject = request.POST.get('subject')
+        description = request.POST.get('decription')
+        obj = Query.objects.create(email=email, first_name=fname, last_name=lname, subject=subject,
+                                   description=description)
+        obj.save()
+
+        return redirect('/contact/')
+
+    else:
+        return HttpResponse('Something went wrong')

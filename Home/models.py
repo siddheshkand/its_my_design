@@ -82,6 +82,9 @@ class ContactInfo(models.Model):
 
 
 class Query(models.Model):
-    name = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=100,null=True)
+    last_name = models.CharField(max_length=100,null=True)
     email = models.EmailField()
+    subejct = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
+
