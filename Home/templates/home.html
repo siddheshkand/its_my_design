@@ -53,13 +53,11 @@
     <link rel="apple-touch-icon" sizes="152x152" href="{% static 'favicon/apple-icon-152x152.png' %}">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-icon-180x180.png' %}">
     <link rel="icon" type="image/png" sizes="192x192" href="{% static 'favicon/android-icon-192x192.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'favicon/favicon-96x96.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/logo.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/logo.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/logo.png' %}">
     <link rel="manifest" href="{% static 'favicon/manifest.json' %}">
-    <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{% static 'favicon/ms-icon-144x144.png' %}">
-    <meta name=" theme-color" content="#ffffff">
 
     <style>
         .p-y-2 {
@@ -97,6 +95,20 @@
         .nav-link {
             color: white !important;
             font-weight: 900;
+        }
+
+        .work-box {
+            background-size: 150px;
+            background-color: #cdcdcd;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .work-box {
+                position: relative;
+                left: -10px;
+                color: red;
+                width: 160px;
+            }
         }
     </style>
 </head>
@@ -213,9 +225,8 @@
         <div class="project-content">
             {% for   category in all_category %}
                 <div class="col-forth" style="width:{{ width_percent }}%">
-                    <div class="project animate-box hover-style"
-                         style="background-image:url({{ category.logo.url }});background-size:150px;background-color: #cdcdcd;
-                                 ">
+                    <div class="project animate-box hover-style work-box"
+                         style="background-image: url({{ category.logo.url }});">
                         <a href="/work/?category={{ category.name }}" class="desc hover-none">
                             <h4>{{ category.name }}</h4>
                         </a>
