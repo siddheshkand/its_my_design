@@ -29,3 +29,11 @@ def about(request):
 
 def contact(request):
     return render(request, "contact.html")
+
+
+def page_not_found(request):
+    return render(request, '404.html')
+
+
+def voting(request):
+    return render(request, 'voting.html')

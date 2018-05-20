@@ -78,16 +78,6 @@
             color: white !important;
             font-weight: 900;
         }
-
-        .hover-style :hover {
-            background-color: #ff0082;
-            color: white!important;
-
-        .hover-none{
-
-        }
-
-
     </style>
 </head>
 <body>
@@ -102,9 +92,9 @@
                     <div class="col-xs-12 text-right">
                         <p class="num">Call: +01 123 456 7890</p>
                         <ul class="fh5co-social">
-                            <li><a href="#"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                            <li><a href="#"><i class="icon-github"></i></a></li>
+                            <li><a href="#"><i class="icon-twitter" style="color: #1baae1;"></i></a></li>
+                            <li><a href="#"><i class="icon-dribbble" style="color:#ea4c89;"></i></a></li>
+                            <li><a href="#"><i class="icon-github" style="color: #211F1F;"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -124,19 +114,10 @@
                     </div>
                     <div class="col-xs-10 text-right menu-1">
                         <ul>
-                            <!-- <li class="active"><a href="index.html">Home</a></li> -->
-                            <li><a href="#" class="nav-link">Work</a></li>
-                            <li><a href="work.html" class="nav-link">About</a></li>
-                            <li class="has-dropdown">
-                                <a href="#" class="nav-link">Services</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Web Design</a></li>
-                                    <li><a href="#">eCommerce</a></li>
-                                    <li><a href="#">Branding</a></li>
-                                    <li><a href="#">API</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="" class="nav-link">Contact</a></li>
+                            <li><a href="{% url 'home:home_page' %}" class="nav-link">Home</a></li>
+                            <li><a href="{% url 'home:home_page' %}#fh5co-project" class="nav-link">Work</a></li>
+                            <li><a href="{% url 'home:about' %}" class="nav-link">About us</a></li>
+                            <li><a href="{% url 'home:contact' %}" class="nav-link">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -177,12 +158,12 @@
                        autoplay loop muted></video>
             </div>
             <div class="item">
-                <img src="data:image/png;base64,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"
+                <img src="{% static 'images/project-2.jpg' %}"
                      style="width: 1366px;height: 600px;object-fit: cover;">
             </div>
 
             <div class="item">
-                <img src="{% static 'images/project-3.jpg' %}"
+                <img src="{% static 'images/project-1.jpg' %}"
                      style="width: 1366px;height: 600px;object-fit: cover;">
             </div>
         </div>
@@ -204,9 +185,7 @@
             <div class="row animate-box">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                     <h2>Our Latest Work</h2>
-                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
-                        provident.
-                        Odit ab aliquam dolor eius.</p>
+                    <p>This is our latest show case of various categories of work we have done.Click individual categories to know more.</p>
                 </div>
             </div>
         </div>
@@ -230,14 +209,13 @@
             <div class="row animate-box">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                     <h2>Lets Get Started</h2>
-                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
-                        provident.
-                        Odit ab aliquam dolor eius.</p>
+                    <p>First here contact us, we are here to help. </p>
+                    <p>Know our services and pricing plans,ask any queries or report problem </p>
                 </div>
             </div>
             <div class="row animate-box">
                 <div class="col-md-8 col-md-offset-2 text-center">
-                    <p><a href="#" class="btn btn-default btn-lg">Get in Touch</a></p>
+                    <p><a href="{% url 'home:contact' %}" class="btn btn-default btn-lg">Get in Touch</a></p>
                 </div>
             </div>
         </div>
@@ -288,9 +266,9 @@
             <div class="row row-pb-md">
                 <div class="col-md-4 fh5co-widget">
                     <h3>A Little About Its My Design.</h3>
-                    <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta
-                        adipisci architecto culpa amet.</p>
-                    <p><a class="btn btn-primary btn-outline with-arrow" href="#">Learn More <i
+                    <p>Its My Design is one of the leading company in design industry.Providing high quality solution
+                        for your brand. </p>
+                    <p><a class="btn btn-primary btn-outline with-arrow" href="{% url 'home:about' %}">Learn More <i
                             class="icon-arrow-right"></i></a></p>
                 </div>
                 <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
@@ -330,11 +308,10 @@
                     </p>
                     <p>
                     <ul class="fh5co-social-icons">
-
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                        <li><a href="#"><i class="icon-twitter" style="color: #1baae1;"></i></a></li>
+                        <li><a href="#"><i class="icon-facebook" style="color: #3b5998;"></i></a></li>
+                        <li><a href="#"><i class="icon-linkedin" style="color: #4875b4;"></i></a></li>
+                        <li><a href="#"><i class="icon-dribbble" style="color:#ea4c89; "></i></a></li>
                     </ul>
                     </p>
                 </div>
