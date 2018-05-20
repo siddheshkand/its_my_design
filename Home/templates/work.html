@@ -143,8 +143,8 @@
             <div class="row animate-box">
                 <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
                     <h2>Our Latest Work</h2>
-                    <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident.
-                        Odit ab aliquam dolor eius.</p>
+                    <p>This is our latest show case of various categories of work we have done.Click individual
+                        categories to know more.</p>
                 </div>
             </div>
         </div>
@@ -153,7 +153,8 @@
                 <div class="col-md-3 animate-box" data-animate-effect="fadeIn" title="{{ category.media.url }}"
                      style="height: 300px;" onclick="show_modal('{{ category.media.url }}')">
                     <div style="background-color: white!important; height: 80%;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);text-align: center;cursor: pointer;">
-                        <img src="{{ category.media.url }}" height="80%" width="60%" style="display: inline;"><br>
+                        <img src="{{ category.media.url }}" height="50%" width="100%" style="display: inline;object-fit: cover;
+"><br>
                         <h3>{{ category.name }}</h3>
                         <p>{{ category.description }}</p>
                     </div>
@@ -254,7 +255,7 @@
     function show_modal(url) {
         {#alert('it got called');#}
         console.log(url);
-        alert(url);
+        {#alert(url);#}
         $("#cartoonVideo source").attr('src', url);
         $("#cartoonVideo source").attr('type', "video/mp4");
         $("#cartoonVideo")[0].load();
