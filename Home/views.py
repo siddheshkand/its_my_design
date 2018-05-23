@@ -5,7 +5,7 @@ from Home.models import Category, Query
 
 
 def home_page(request):
-    all_category = Category.objects.filter(is_active=True)
+    all_category = Category.objects.filter(is_active=True).order_by('rank')
     return render(request, "home.html", {
         'all_category': all_category,
         'width_percent': 20
@@ -17,6 +17,7 @@ def work(request):
     # all category same as above
     category_obj = get_object_or_404(Category, name=category)
     projects = category_obj.project_set.all()
+    # projects = sorted(projects,key=lambda x:x.rank)
     return render(request, "work.html", {
         'project_type_name': category,
         'all_category': projects,
