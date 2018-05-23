@@ -36,7 +36,7 @@ def page_not_found(request):
 
 
 def voting(request):
-    return render(request, 'voting.html')
+    return render(request, 'voting.html ')
 
 
 def query(request):
