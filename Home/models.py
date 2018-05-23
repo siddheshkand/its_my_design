@@ -16,7 +16,7 @@ def project_media_path(instance, filename):
     extension = extension[len(extension) - 1]
     name = instance.name
     name = name.replace(" ", "")
-    return 'Media/Categories/{0}/{1}/{2}.{3}'.format(instance.category.name.replace(" ", ""), name, name, extension)
+    return 'Media/Categories/{0}/{1}/{2}.{3}'.format(instance.category.name.replace(" ", ""), name, name, extension.lower())
 
 
 class Carousel(models.Model):
@@ -60,9 +60,9 @@ class Project(models.Model):
         image_extensions = ['jpeg', 'jpg', 'png']
         extension = self.media.name.split('.')
         extension = extension[len(extension) - 1]
-        if extension in video_extensions:
+        if extension.lower() in video_extensions:
             self.media_type = 1
-        elif extension in image_extensions:
+        elif extension.lower() in image_extensions:
             self.media_type = 0
         else:
             raise ValidationError(u'Unsupported file extension.')
