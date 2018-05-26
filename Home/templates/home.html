@@ -125,7 +125,7 @@
             }
 
             .col-forth {
-                height: 10%!important;
+                height: 10% !important;
             }
         }
     </style>
@@ -245,9 +245,15 @@
                 <div class="col-forth" style="width:{{ width_percent }}%">
                     <div class="project animate-box hover-style work-box"
                          style="background-image: url({{ category.logo.url }});">
-                        <a href="/work/?category={{ category.name }}" class="desc hover-none">
-                            <h4>{{ category.name }}</h4>
-                        </a>
+                        {% ifequal category.name "Election Campaign" %}
+                            <a href="{% url 'home:contact' %}" class="desc hover-none">
+                                <h4>{{ category.name }}</h4>
+                            </a>
+                        {% else %}
+                            <a href="/work/?category={{ category.name }}" class="desc hover-none">
+                                <h4>{{ category.name }}</h4>
+                            </a>
+                        {% endifequal %}
                     </div>
                 </div>
             {% endfor %}
