@@ -51,7 +51,7 @@ def query(request):
         obj = Query.objects.create(email=email, first_name=fname, last_name=lname, subject=subject,
                                    description=description)
 
-        message = "<h1>You have query received from " + fname + " " + lname + " and has provided this mail for communication " + email + "</h1> <h2>Description: " + description + "</h2>";
+        message = "<h1>You have query received from " + fname + " " + lname + " and has provided this mail for communication " + email + "</h1> <h2>Description: " + description + "</h2>"
         obj.save()
         send_mail(subject,
                   message,
