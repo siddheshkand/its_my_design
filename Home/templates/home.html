@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Its my Design</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -128,6 +128,7 @@
 </head>
 <body>
 
+{#   Nav-bar    #}
 <div class="fh5co-loader"></div>
 
 <div id="page">
@@ -136,7 +137,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 text-right">
-                        <p class="num">Call: +91 8788008324</p>
+                        <p class="num"><a href="tel://+91 8485800921">+91 8485800921</a></p>
                         <ul class="fh5co-social">
                             <li><a href="#"><i class="icon-twitter" style="color: #1baae1;"></i></a></li>
                             <li><a href="#"><i class="icon-dribbble" style="color:#ea4c89;"></i></a></li>
@@ -146,6 +147,7 @@
                 </div>
             </div>
         </div>
+
         <div class="top-menu">
             <div class="container">
                 <div class="row">
@@ -188,6 +190,8 @@
     {#            </div>#}
     {#        </div>#}
 
+{#        Carousel-Slider       #}
+
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -224,6 +228,7 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
     {#    </header>#}
 
     <div id="fh5co-project">
@@ -236,6 +241,7 @@
                 </div>
             </div>
         </div>
+
         <div class="project-content">
             {% for   category in all_category %}
                 <div class="col-forth" style="width:{{ width_percent }}%">
@@ -266,6 +272,9 @@
             </div>
         </div>
     </div>
+
+{#        Achivements      #}
+
     <section id="counter" class="counter">
         <div class="main_counter_area">
             <div class="overlay p-y-3">
