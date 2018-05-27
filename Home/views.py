@@ -52,7 +52,7 @@ def query(request):
                                    description=description)
 
         message = "<h3>You have query received from " + fname + " " + lname + ".</h3>"
-        message += "<h3>And has provided this mail for communication<h3>" + email + "<h2>Description : </h2><h2>" + description + "</h2>"
+        message += "<h3>And has provided this mail for communication<h3>" + email + "<h2>Description : </h2><0=h2>" + description + "</h2>"
         obj.save()
         send_mail(subject,
                   message,
