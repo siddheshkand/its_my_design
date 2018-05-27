@@ -85,6 +85,6 @@ class Query(models.Model):
     first_name = models.CharField(max_length=100,null=True)
     last_name = models.CharField(max_length=100,null=True)
     email = models.EmailField()
-    subejct = models.CharField(max_length=100)
+    subject = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
 

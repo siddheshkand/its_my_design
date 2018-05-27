@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 # Create your views here.
 from Home.models import Category, Query
+from django.core.mail import send_mail
 
 
 def home_page(request):
@@ -46,11 +47,14 @@ def query(request):
         fname = request.POST.get('fname')
         lname = request.POST.get('lname')
         subject = request.POST.get('subject')
-        description = request.POST.get('decription')
+        description = request.POST.get('description')
         obj = Query.objects.create(email=email, first_name=fname, last_name=lname, subject=subject,
                                    description=description)
         obj.save()
-
+        send_mail(subject,
+                  description,
+                  'itsmydesignbrand@gmail.com',
+                  ['rshahshah2890@gmail.com'], fail_silently=False)
         return redirect('/contact/')
 
     else:
