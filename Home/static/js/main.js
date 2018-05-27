@@ -164,7 +164,7 @@
 
 	};
 
-
+    //GOTO Top Button
 	var goToTop = function() {
 
 		$('.js-gotop').on('click', function(event){
@@ -193,6 +193,7 @@
 
 
 	// Loading page
+	//Achivements
 	var loaderPage = function() {
 		$(".fh5co-loader").fadeOut("slow");
 	};
@@ -210,7 +211,7 @@
 			$('#fh5co-counter').waypoint( function( direction ) {
 										
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
-					setTimeout( counter , 400);					
+					setTimeout( counter , 400);
 					$(this.element).addClass('animated');
 				}
 			} , { offset: '90%' } );
@@ -229,6 +230,8 @@
 		}
 	};
 
+	//Carousel-Slider
+
 	var testimonialCarousel = function(){
 		
 		var owl = $('.owl-carousel-fullwidth');
@@ -244,6 +247,7 @@
 
 	};
 
+	//Carousel-Slider End
 	
 	$(function(){
 		mobileMenuOutsideClick();
