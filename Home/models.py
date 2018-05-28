@@ -55,7 +55,7 @@ class Project(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     media = models.FileField(upload_to=project_media_path)
     media_type = models.BooleanField(default=0)
-    youtube_url = models.URLField(default="",null=True,blank=True)
+    youtube_url = models.URLField(null=True, blank=True)
 
     def clean(self):
         video_extensions = ['mp4', 'mov', 'avi', 'mpg', 'wmv']

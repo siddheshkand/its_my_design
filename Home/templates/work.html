@@ -154,7 +154,7 @@
                      style="height: 300px;"
                      onclick="show_modal('{{ category.media.url }}','{{ category.name }}','{{ category.youtube_url }}')">
                     <div style="background-color: white!important; height: 80%;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);text-align: center;cursor: pointer;">
-                        {% if category.media_type %}
+                        {% if category.youtube_url %}
                             <iframe height="70%" width="100%" src="{{ category.youtube_url }}"
                                     frameborder="0" allow="autoplay; encrypted-media"
                                     style="display: inline;object-fit: cover;"></iframe>
@@ -256,12 +256,14 @@
 
     function show_modal(url, title, youtube_url) {
         {#alert('it got called');#}
+        youtube_url = youtube_url.toString();
         imageFormat = ["jpg", "png"];
         videoFormat = ["mp4", "avi", "mov"];
         console.log(url);
         {#alert(url);#}
         format = url.substr(url.length - 3);
-        if ((imageFormat.indexOf(format) > -1)) {
+        //if ((imageFormat.indexOf(format) > -1)) {
+        if (!youtube_url) {
             /*frameborder="0"
         allow="" allowfullscreen*/
             console.log("image");
