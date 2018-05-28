@@ -16,11 +16,12 @@ def project_media_path(instance, filename):
     extension = extension[len(extension) - 1]
     name = instance.name
     name = name.replace(" ", "")
-    return 'Media/Categories/{0}/{1}/{2}.{3}'.format(instance.category.name.replace(" ", ""), name, name, extension.lower())
+    return 'Media/Categories/{0}/{1}/{2}.{3}'.format(instance.category.name.replace(" ", ""), name, name,
+                                                     extension.lower())
 
 
 class Carousel(models.Model):
-    name = models.CharField(max_length=50,null=True)
+    name = models.CharField(max_length=50, null=True)
 
 
 class DayHit(models.Model):
@@ -54,6 +55,7 @@ class Project(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     media = models.FileField(upload_to=project_media_path)
     media_type = models.BooleanField(default=0)
+    youtube_url = models.URLField(default="")
 
     def clean(self):
         video_extensions = ['mp4', 'mov', 'avi', 'mpg', 'wmv']
@@ -82,9 +84,8 @@ class ContactInfo(models.Model):
 
 
 class Query(models.Model):
-    first_name = models.CharField(max_length=100,null=True)
-    last_name = models.CharField(max_length=100,null=True)
+    first_name = models.CharField(max_length=100, null=True)
+    last_name = models.CharField(max_length=100, null=True)
     email = models.EmailField()
     subject = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
-

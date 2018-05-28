@@ -72,7 +72,7 @@
             margin: 0 auto;
             display: block;
             width: 100%;
-            height: 100%;
+            height: 150px;
         }
     </style>
 
@@ -151,12 +151,13 @@
         <div class="pro">
             {% for category in all_category %}
                 <div class="col-md-3 animate-box" data-animate-effect="fadeIn" title="{{ category.media.url }}"
-                     style="height: 300px;" onclick="show_modal('{{ category.media.url }}','{{ category.name }}')">
+                     style="height: 300px;"
+                     onclick="show_modal('{{ category.media.url }}','{{ category.name }}','{{ category.youtube_url }}')">
                     <div style="background-color: white!important; height: 80%;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);text-align: center;cursor: pointer;">
                         {% if category.media_type %}
-{#                            <video src="{{ category.media.url }}" height="70%" width="100%"#}
-{#                                   style="display: inline;object-fit: cover;"></video>#}
-
+                            <iframe height="70%" width="100%" src="{{ category.youtube_url }}"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                                    style="display: inline;object-fit: cover;"></iframe>
                         {% else %}
                             <img src="{{ category.media.url }}" height="70%" width="100%" style="display: inline;object-fit: cover;
 "><br>
@@ -239,10 +240,6 @@
                 <h4 class="modal-title" id="project-title">Demo</h4>
             </div>
             <div class="modal-body" id="add-data">
-                {#                <video controls autoplay id="showcase-data" width="100%" height="315" muted>#}
-                {#                    <source src=""/>#}
-                {#                </video>#}
-
             </div>
         </div>
     </div>
@@ -251,15 +248,13 @@
 <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 </div>
-
-
 </body>
 <script type="text/javascript">
 
     /* Assign empty url value to the iframe src attribute when*/
 
 
-    function show_modal(url, title) {
+    function show_modal(url, title, youtube_url) {
         {#alert('it got called');#}
         imageFormat = ["jpg", "png"];
         videoFormat = ["mp4", "avi", "mov"];
@@ -267,6 +262,8 @@
         {#alert(url);#}
         format = url.substr(url.length - 3);
         if ((imageFormat.indexOf(format) > -1)) {
+            /*frameborder="0"
+        allow="" allowfullscreen*/
             console.log("image");
             titlediv = document.getElementById("project-title");
             titlediv.innerText = title;
@@ -280,25 +277,25 @@
             }
             document.getElementById("add-data").appendChild(elem);
         }
-        else if (videoFormat.indexOf(format) > -1) {
+        else {
+            {#<iframe width="854" height="480" src="https://www.youtube.com/embed/rKXFgWP-2xQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>#}
             console.log("video");
             titlediv = document.getElementById("project-title");
             titlediv.innerText = title;
-            elem = document.createElement("video");
-            elem.setAttribute("id", "showcase-data");
-            elem.setAttribute("src", url);
-            elem.setAttribute("width", "100%");
-            elem.setAttribute("autoplay", "true");
-            elem.setAttribute("muted", "true");
+            elem = document.createElement("iframe");
+            elem.setAttribute("width", "854");
+            elem.setAttribute("height", "854");
+            elem.setAttribute("src", youtube_url);
+            elem.setAttribute("frameborder", "0");
+            elem.setAttribute("allow", 'autoplay; encrypted-media');
+            elem.setAttribute("allowfullscreen", "");
             var myNode = document.getElementById("add-data");
             while (myNode.firstChild) {
                 myNode.removeChild(myNode.firstChild);
             }
             document.getElementById("add-data").appendChild(elem);
         }
-        else {
-            console.log("error format");
-        }
+
         {#$("#showcase-data source").attr('src', url);#}
         {#$("#showcase-data source").attr('type', "video/mp4");#}
         {#$("#showcase-data")[0].load();#}
