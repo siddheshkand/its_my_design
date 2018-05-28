@@ -8,9 +8,9 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = (
         'name', 'category', 'media', 'media_type', 'youtube_url'
     )
-    # list_editable = (
-    #     'youtube_url',
-    # )
+    list_editable = (
+        'youtube_url', 'media_type'
+    )
     #
     # name = models.CharField(max_length=100)
     # description = models.CharField(max_length=500, blank=True, null=True)
