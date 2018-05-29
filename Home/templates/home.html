@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8" >
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Its my Design</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -103,6 +103,10 @@
         }
 
         @media only screen and (max-width: 768px) {
+            .for-mobile {
+                font-size: small !important;
+            }
+
             .work-box {
                 position: relative;
                 left: -10px;
@@ -127,6 +131,7 @@
             .col-forth {
                 height: 10% !important;
             }
+
         }
     </style>
 </head>
@@ -194,7 +199,7 @@
     {#            </div>#}
     {#        </div>#}
 
-{#        Carousel-Slider       #}
+    {#        Carousel-Slider       #}
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -253,11 +258,11 @@
                          style="background-image: url({{ category.logo.url }});">
                         {% ifequal category.name "Election Campaign" %}
                             <a href="{% url 'home:contact' %}" class="desc hover-none">
-                                <h4>{{ category.name }}</h4>
+                                <h4 class="for-mobile">{{ category.name }}</h4>
                             </a>
                         {% else %}
                             <a href="/work/?category={{ category.name }}" class="desc hover-none">
-                                <h4>{{ category.name }}</h4>
+                                <h4 class="for-mobile">{{ category.name }}</h4>
                             </a>
                         {% endifequal %}
                     </div>
@@ -283,7 +288,7 @@
         </div>
     </div>
 
-{#        Achivements      #}
+    {#        Achivements      #}
 
     <section id="counter" class="counter">
         <div class="main_counter_area">

@@ -155,7 +155,7 @@
                     {% if category.youtube_url %}
                      onclick="show_modal('0','{{ category.name }}','{{ category.youtube_url }}')">
                     {% else %}
-                    onclick="show_modal('{{ category.media.url }}','{{ category.name }}','{{ category.youtube_url }}')">
+                    onclick="show_modal('{{ category.media.url }}','{{ category.name }}','')">
                     {% endif %}
                     <div style="background-color: white!important; height: 80%;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);text-align: center;cursor: pointer;">
                         {% if category.youtube_url %}
@@ -259,12 +259,10 @@
 
 
     function show_modal(url, title, youtube_url) {
-        {#alert('it got called');#}
         youtube_url = youtube_url.toString();
         imageFormat = ["jpg", "png"];
         videoFormat = ["mp4", "avi", "mov"];
         console.log(url);
-        {#alert(url);#}
         format = url.substr(url.length - 3);
         //if ((imageFormat.indexOf(format) > -1)) {
         if (!youtube_url) {
