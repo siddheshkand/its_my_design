@@ -124,9 +124,3 @@ MEDIA_URL = '/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '')
 
 #Email Configuration
-
-EMAIL_PORT = '587'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'itsmydesignbrand@gmail.com'
-EMAIL_HOST_PASSWORD = '5592098292'

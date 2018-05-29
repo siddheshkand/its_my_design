@@ -72,7 +72,7 @@
             margin: 0 auto;
             display: block;
             width: 100%;
-            height: 100%;
+            height: 150px;
         }
     </style>
 
@@ -87,7 +87,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 text-right">
-                        <p class="num"><a href="tel://+91 8485800921">+91 8485800921</a></p>
+                        <p class="num">Call: +91 8788008324</p>
                         <ul class="fh5co-social">
                             <li><a href="#"><i class="icon-twitter" style="color: #1baae1;"></i></a></li>
                             <li><a href="#"><i class="icon-dribbble" style="color:#ea4c89;"></i></a></li>
@@ -150,13 +150,24 @@
         </div>
         <div class="pro">
             {% for category in all_category %}
-                <div class="col-md-3 animate-box" data-animate-effect="fadeIn" title="{{ category.media.url }}"
-                     style="height: 300px;" onclick="show_modal('{{ category.media.url }}')">
+                <div class="col-md-3 animate-box" data-animate-effect="fadeIn"
+                     style="height: 300px;"
+                    {% if category.youtube_url %}
+                     onclick="show_modal('0','{{ category.name }}','{{ category.youtube_url }}')">
+                    {% else %}
+                    onclick="show_modal('{{ category.media.url }}','{{ category.name }}','{{ category.youtube_url }}')">
+                    {% endif %}
                     <div style="background-color: white!important; height: 80%;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);text-align: center;cursor: pointer;">
-                        <img src="{{ category.media.url }}" height="70%" width="100%" style="display: inline;object-fit: cover;
+                        {% if category.youtube_url %}
+                            <iframe height="70%" width="100%" src="{{ category.youtube_url }}"
+                                    frameborder="0" allow="autoplay; encrypted-media"
+                                    style="display: inline;object-fit: cover;"></iframe>
+                        {% else %}
+                            <img src="{{ category.media.url }}" height="70%" width="100%" style="display: inline;object-fit: cover;
 "><br>
+                        {% endif %}
                         <h3>{{ category.name }}</h3>
-{#                        <p>{{ category.description }}</p>#}
+                        {#<p>{{ category.description }}</p>#}
                     </div>
                 </div>
             {% endfor %}
@@ -225,19 +236,14 @@
     </div>
 </footer>
 
-{#   On Click Open Modal   #}
-
 <div id="myModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title"></h4>
+                <h4 class="modal-title" id="project-title">Demo</h4>
             </div>
-            <div class="modal-body">
-                <video   id="cartoonVideo" width="100%" height="315" >
-                    <source src=""/>
-                </video>
+            <div class="modal-body" id="add-data">
             </div>
         </div>
     </div>
@@ -246,22 +252,60 @@
 <div class="gototop js-top">
     <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 </div>
-
-
 </body>
 <script type="text/javascript">
 
     /* Assign empty url value to the iframe src attribute when*/
 
 
-    function show_modal(url) {
+    function show_modal(url, title, youtube_url) {
         {#alert('it got called');#}
+        youtube_url = youtube_url.toString();
+        imageFormat = ["jpg", "png"];
+        videoFormat = ["mp4", "avi", "mov"];
         console.log(url);
         {#alert(url);#}
-        $("#cartoonVideo source").attr('src', url);
-        $("#cartoonVideo source").attr('type', "video/mp4");
-        $("#cartoonVideo")[0].load();
-        $("#cartoonVideo").attr('poster', url);
+        format = url.substr(url.length - 3);
+        //if ((imageFormat.indexOf(format) > -1)) {
+        if (!youtube_url) {
+            /*frameborder="0"
+        allow="" allowfullscreen*/
+            console.log("image");
+            titlediv = document.getElementById("project-title");
+            titlediv.innerText = title;
+            elem = document.createElement("img");
+            elem.setAttribute("id", "showcase-data");
+            elem.setAttribute("src", url);
+            elem.setAttribute("width", "100%");
+            var myNode = document.getElementById("add-data");
+            while (myNode.firstChild) {
+                myNode.removeChild(myNode.firstChild);
+            }
+            document.getElementById("add-data").appendChild(elem);
+        }
+        else {
+            {#<iframe width="854" height="480" src="https://www.youtube.com/embed/rKXFgWP-2xQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>#}
+            console.log("video");
+            titlediv = document.getElementById("project-title");
+            titlediv.innerText = title;
+            elem = document.createElement("iframe");
+            elem.setAttribute("width", "854");
+            elem.setAttribute("height", "854");
+            elem.setAttribute("src", youtube_url);
+            elem.setAttribute("frameborder", "0");
+            elem.setAttribute("allow", 'autoplay; encrypted-media');
+            elem.setAttribute("allowfullscreen", "");
+            var myNode = document.getElementById("add-data");
+            while (myNode.firstChild) {
+                myNode.removeChild(myNode.firstChild);
+            }
+            document.getElementById("add-data").appendChild(elem);
+        }
+
+        {#$("#showcase-data source").attr('src', url);#}
+        {#$("#showcase-data source").attr('type', "video/mp4");#}
+        {#$("#showcase-data")[0].load();#}
+        {#$("#showcase-data").attr('poster', url);#}
 
         $("#myModal").modal('show');
     }

@@ -123,6 +123,10 @@
             .project-content .col-forth {
                 height: 100% !important;
             }
+
+            .col-forth {
+                height: 10% !important;
+            }
         }
     </style>
 </head>
@@ -203,7 +207,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <video muted src="{% static 'video/promo.mp4' %}"
+                <video muted src="{% static 'video/1.mp4' %}"
                        style="width: 1366px;height: 600px;object-fit: cover;"
                        autoplay loop></video>
             </div>
@@ -247,9 +251,15 @@
                 <div class="col-forth" style="width:{{ width_percent }}%">
                     <div class="project animate-box hover-style work-box"
                          style="background-image: url({{ category.logo.url }});">
-                        <a href="/work/?category={{ category.name }}" class="desc hover-none">
-                            <h4>{{ category.name }}</h4>
-                        </a>
+                        {% ifequal category.name "Election Campaign" %}
+                            <a href="{% url 'home:contact' %}" class="desc hover-none">
+                                <h4>{{ category.name }}</h4>
+                            </a>
+                        {% else %}
+                            <a href="/work/?category={{ category.name }}" class="desc hover-none">
+                                <h4>{{ category.name }}</h4>
+                            </a>
+                        {% endifequal %}
                     </div>
                 </div>
             {% endfor %}

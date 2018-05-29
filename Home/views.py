@@ -52,11 +52,14 @@ def query(request):
         description = request.POST.get('description')
         obj = Query.objects.create(email=email, first_name=fname, last_name=lname, subject=subject,
                                    description=description)
+
+        message = "<h3>You have query received from " + fname + " " + lname + ".</h3>"
+        message += "<h3>And has provided this mail for communication<h3>" + email + "<h2>Description : </h2><0=h2>" + description + "</h2>"
         obj.save()
-        send_mail('SpoFit Email Verification',
-                  'hello',
-                  'siddheshkand123@gmail.com',
-                  ['akzarma1@gmail.com'], fail_silently=False)
+        send_mail(subject,
+                  message,
+                  email,
+                  ['itsmydesignbrand@gmail.com'], fail_silently=False, html_message=message)
         return redirect('/contact/')
 
     else:
