@@ -29,9 +29,9 @@ ALLOWED_HOSTS = ['127.0.0.1', '192.168.43.154','itsmydesign.in','www.itsmydesign
 # Application definition
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = "itsmydesignbrand@gmail.com"
-EMAIL_HOST_PASSWORD = "9922569183"
-EMAIL_PORT = 587
+EMAIL_HOST_USER = 'akzarma2@gmail.com'
+EMAIL_HOST_PASSWORD = 'testuser123'
+EMAIL_PORT = '587'
 
 
 INSTALLED_APPS = [
