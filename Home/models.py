@@ -63,7 +63,7 @@ class Project(models.Model):
             self.media_type==1
         else:
             video_extensions = ['mp4', 'mov', 'avi', 'mpg', 'wmv']
-            image_extensions = ['jpeg', 'jpg', 'pg']
+            image_extensions = ['jpeg', 'jpg', 'pnndfghjg']
             extension = self.media.name.split('.')
             extension = extension[len(extension) - 1]
             if extension.lower() in video_extensions:
