@@ -95,6 +95,7 @@
         .nav-link {
             color: white !important;
             font-weight: 900;
+            mix-blend-mode: difference;
         }
 
         .work-box {
@@ -130,6 +131,16 @@
 
             .col-forth {
                 height: 10% !important;
+            }
+
+            .overlay-color-for-slide {
+                -webkit-filter: grayscale(100%) brightness(135%) contrast(120%);
+                filter: grayscale(100%) brightness(135%) contrast(120%);
+            }
+
+            .blend {
+                mix-blend-mode: exclusion !important;
+                color: white;
             }
 
         }
@@ -170,7 +181,7 @@
                         </div>
                     </div>
                     <div class="col-xs-10 text-right menu-1">
-                        <ul>
+                        <ul class="blend">
                             <li><a href="{% url 'home:home_page' %}" class="nav-link">Home</a></li>
                             <li><a href="{% url 'home:home_page' %}#fh5co-project" class="nav-link">Work</a></li>
                             <li><a href="{% url 'home:about' %}" class="nav-link">About us</a></li>
@@ -213,17 +224,17 @@
         <div class="carousel-inner">
             <div class="item active">
                 <video muted src="{% static 'video/1.mp4' %}"
-                       style="width: 1366px;height: 600px;object-fit: cover;"
-                       autoplay loop></video>
+                       style="width: 100%;height: 600px;object-fit: cover;"
+                       autoplay loop class="overlay-color-for-slide"></video>
             </div>
             <div class="item">
-                <img src="{% static 'images/AirIndia.jpg' %}"
-                     style="width: 1366px;height: 600px;object-fit: cover;">
+                <img src="{% static 'images/bike.jpg' %}"
+                     style="width: 100%;height: 600px;object-fit: cover;" class="overlay-color-for-slide">
             </div>
 
             <div class="item">
-                <img src="{% static 'images/project-1.jpg' %}"
-                     style="width: 1366px;height: 600px;object-fit: cover;">
+                <img src="{% static 'images/render.jpg' %}"
+                     style="width: 100%;height: 600px;object-fit: cover;" class="overlay-color-for-slide">
             </div>
         </div>
 
@@ -388,6 +399,8 @@
             </div>
         </div>
     </footer>
+
+
 </div>
 
 <div class="gototop js-top">
