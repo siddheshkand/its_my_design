@@ -53,21 +53,25 @@ class Project(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=500, blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    media = models.FileField(upload_to=project_media_path)
+    media = models.FileField(upload_to=project_media_path,default=None,blank=True)
     media_type = models.BooleanField(default=0)
     youtube_url = models.URLField(null=True, blank=True)
 
     def clean(self):
-        video_extensions = ['mp4', 'mov', 'avi', 'mpg', 'wmv']
-        image_extensions = ['jpeg', 'jpg', 'png']
-        extension = self.media.name.split('.')
-        extension = extension[len(extension) - 1]
-        if extension.lower() in video_extensions:
-            self.media_type = 1
-        elif extension.lower() in image_extensions:
-            self.media_type = 0
+
+        if self.youtube_url:
+            self.media_type==1
         else:
-            raise ValidationError(u'Unsupported file extension.')
+            video_extensions = ['mp4', 'mov', 'avi', 'mpg', 'wmv']
+            image_extensions = ['jpeg', 'jpg', 'pg']
+            extension = self.media.name.split('.')
+            extension = extension[len(extension) - 1]
+            if extension.lower() in video_extensions:
+                self.media_type = 1
+            elif extension.lower() in image_extensions:
+                self.media_type = 0
+            else:
+                raise ValidationError(u'Unsupported file extension.')
 
     def __str__(self):
         return self.category.name + '-' + self.name

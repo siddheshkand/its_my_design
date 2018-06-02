@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 # Create your views here.
 from Home.models import Category, Query
+from django.conf import settings
+
 from django.core.mail import send_mail
 
 
@@ -38,7 +40,7 @@ def page_not_found(request):
 
 
 def voting(request):
-    return render(request, 'voting.html ')
+    return render(request, 'voting.html')
 
 
 def query(request):
