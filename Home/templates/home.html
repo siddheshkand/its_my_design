@@ -143,6 +143,24 @@
                 color: white;
             }
 
+            .logo-box {
+                left: -23px;
+                top: -27px;
+            }
+
+            .fh5co-nav-toggle {
+                top: 40px;
+            }
+
+            .carousel-caption {
+                left: 0;
+                right: unset;
+            }
+
+            .carousel-inner {
+                height: 211px;
+            }
+
         }
 
         .carousel-caption-text {
@@ -150,6 +168,7 @@
             background: rgba(64, 64, 64, 0.9);
             display: inline-block;
             font-size: smaller;
+
         }
 
         @media screen and (min-width: 768px) {
@@ -158,7 +177,24 @@
             }
 
             .carousel-caption-text {
+                width: 400px;
                 font-size: x-large;
+            }
+
+        }
+
+        @media only screen and (max-width: 768px) {
+            .carousel-caption {
+                left: 0;
+                right: unset;
+                left: 50px;
+                margin-right: 100%;
+                bottom: -13%;
+                right: 23px;
+                position: sticky;
+            }
+            .carousel-caption-text{
+                width: 140px;
             }
         }
     </style>
@@ -188,7 +224,7 @@
         <div class="top-menu">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-2">
+                    <div class="col-xs-2 logo-box">
                         <div id="fh5co-logo">
                             <a href="/">
                                 <span>
@@ -235,6 +271,7 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -260,6 +297,14 @@
                      style="width: 100%;height: 600px;object-fit: cover;" class="overlay-color-for-slide">
                 <div class="carousel-caption">
                     <h3 style="color: white;" class="carousel-caption-text" id="cap-2">Graphics design</h3>
+
+                </div>
+            </div>
+            <div class="item">
+                <img src="http://www.afsedec.org/wp-content/uploads/2017/11/web-design.jpg"
+                     style="width: 100%;height: 600px;object-fit: cover;" class="overlay-color-for-slide">
+                <div class="carousel-caption">
+                    <h3 style="color: white;" class="carousel-caption-text" id="cap-2">Web Devlopment</h3>
 
                 </div>
             </div>
