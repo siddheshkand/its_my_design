@@ -144,6 +144,23 @@
             }
 
         }
+
+        .carousel-caption-text {
+            padding: 10px;
+            background: rgba(64, 64, 64, 0.9);
+            display: inline-block;
+            font-size: smaller;
+        }
+
+        @media screen and (min-width: 768px) {
+            .carousel-caption {
+                padding-bottom: 100px;
+            }
+
+            .carousel-caption-text {
+                font-size: x-large;
+            }
+        }
     </style>
 </head>
 <body>
@@ -226,15 +243,25 @@
                 <video muted src="{% static 'video/1.mp4' %}"
                        style="width: 100%;height: 600px;object-fit: cover;"
                        autoplay loop class="overlay-color-for-slide"></video>
+                <div class="carousel-caption">
+                    <h3 style="color: white;" class="carousel-caption-text" id="cap-1">Video Editing </h3>
+                </div>
             </div>
             <div class="item">
                 <img src="{% static 'images/bike.jpg' %}"
                      style="width: 100%;height: 600px;object-fit: cover;" class="overlay-color-for-slide">
+                <div class="carousel-caption">
+                    <h3 style="color: white;" class="carousel-caption-text" id="cap-2">Animation</h3>
+                </div>
             </div>
 
             <div class="item">
                 <img src="{% static 'images/render.jpg' %}"
                      style="width: 100%;height: 600px;object-fit: cover;" class="overlay-color-for-slide">
+                <div class="carousel-caption">
+                    <h3 style="color: white;" class="carousel-caption-text" id="cap-2">Graphics design</h3>
+
+                </div>
             </div>
         </div>
 
