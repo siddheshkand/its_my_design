@@ -24,7 +24,7 @@ SECRET_KEY = '5_92o649k^o2y2$-o%b5#0(p-f@$1ovliws@zqf*7^*xb1z4v-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.43.154','itsmydesign.in','www.itsmydesign.in']
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.43.154','itsmydesign.in','www.itsmydesign.in','192.168.0.106']
 
 # Application definition
 EMAIL_USE_TLS = True
