@@ -2,3 +2,4 @@ Gunicorn
 django
 whitenoise
 gunicorn
+django_heroku
