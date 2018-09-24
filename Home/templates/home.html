@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -24,40 +24,40 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <!-- Animate.css -->
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/css/animate.css' %}">
     <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/css/icomoon.css' %}">
     <!-- Bootstrap  -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/css/bootstrap.css' %}">
 
     <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/css/owl.theme.default.min.css' %}">
 
     <!-- Theme style  -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'Home/css/style.css' %}">
 
     <!-- Modernizr JS -->
-    <script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+    <script src="{% static 'Home/js/modernizr-2.6.2.min.js' %}"></script>
 
     <!--Extra styles-->
 
     <!--Favicon-->
-    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-icon-57x57.png' %}">
-    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'favicon/apple-icon-60x60.png' %}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'favicon/apple-icon-72x72.png' %}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'favicon/apple-icon-76x76.png' %}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'favicon/apple-icon-114x114.png' %}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'favicon/apple-icon-120x120.png' %}">
-    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'favicon/apple-icon-144x144.png' %}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'favicon/apple-icon-152x152.png' %}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-icon-180x180.png' %}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'favicon/android-icon-192x192.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/logo.png' %}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/logo.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/logo.png' %}">
-    <link rel="manifest" href="{% static 'favicon/manifest.json' %}">
-    <meta name="msapplication-TileImage" content="{% static 'favicon/ms-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'Home/favicon/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'Home/favicon/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'Home/favicon/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'Home/favicon/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'Home/favicon/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'Home/favicon/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'Home/favicon/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'Home/favicon/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'Home/favicon/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'Home/favicon/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'Home/images/logo.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'Home/images/logo.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'Home/images/logo.png' %}">
+    <link rel="manifest" href="{% static 'Home/favicon/manifest.json' %}">
+    <meta name="msapplication-TileImage" content="{% static 'Home/favicon/ms-icon-144x144.png' %}">
 
     <style>
         .p-y-2 {
@@ -228,7 +228,7 @@
                         <div id="fh5co-logo">
                             <a href="/">
                                 <span>
-                                    <img src="{% static 'images/logo.png' %}" width="100">
+                                    <img src="{% static 'Home/images/logo.png' %}" width="100">
                                 </span>
                             </a>
                         </div>
@@ -277,7 +277,7 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <video muted src="{% static 'video/1.mp4' %}"
+                <video muted src="{% static 'Home/video/1.mp4' %}"
                        style="width: 100%;height: 600px;object-fit: cover;"
                        autoplay loop class="overlay-color-for-slide"></video>
                 <div class="carousel-caption">
@@ -285,7 +285,7 @@
                 </div>
             </div>
             <div class="item">
-                <img src="{% static 'images/bike.jpg' %}"
+                <img src="{% static 'Home/images/bike.jpg' %}"
                      style="width: 100%;height: 600px;object-fit: cover;" class="overlay-color-for-slide">
                 <div class="carousel-caption">
                     <h3 style="color: white;" class="carousel-caption-text" id="cap-2">Animation</h3>
@@ -293,7 +293,7 @@
             </div>
 
             <div class="item">
-                <img src="{% static 'images/render.jpg' %}"
+                <img src="{% static 'Home/images/render.jpg' %}"
                      style="width: 100%;height: 600px;object-fit: cover;" class="overlay-color-for-slide">
                 <div class="carousel-caption">
                     <h3 style="color: white;" class="carousel-caption-text" id="cap-2">Graphics design</h3>
@@ -480,19 +480,19 @@
 </div>
 
 <!-- jQuery -->
-<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'Home/js/jquery.min.js' %}"></script>
 <!-- jQuery Easing -->
-<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'Home/js/jquery.easing.1.3.js' %}"></script>
 <!-- Bootstrap -->
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'Home/js/bootstrap.min.js' %}"></script>
 <!-- Waypoints -->
-<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'Home/js/jquery.waypoints.min.js' %}"></script>
 <!-- Stellar Parallax -->
-<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'Home/js/jquery.stellar.min.js' %}"></script>
 <!-- Carousel -->
-<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'Home/js/owl.carousel.min.js' %}"></script>
 <!-- Main -->
-<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'Home/js/main.js' %}"></script>
 
 <!--Counter scripts -->
 <script type="text/javascript"
