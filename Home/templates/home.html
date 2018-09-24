@@ -193,7 +193,8 @@
                 right: 23px;
                 position: sticky;
             }
-            .carousel-caption-text{
+
+            .carousel-caption-text {
                 width: 140px;
             }
         }
@@ -335,7 +336,7 @@
         </div>
 
         <div class="project-content">
-            {% for   category in all_category %}
+            {% for category in all_category %}
                 <div class="col-forth" style="width:{{ width_percent }}%">
                     <div class="project animate-box hover-style work-box"
                          style="background-image: url({{ category.logo.url }});">
