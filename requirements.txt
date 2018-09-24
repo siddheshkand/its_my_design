@@ -3,3 +3,4 @@ django
 whitenoise
 gunicorn
 django_heroku
+Pillow
