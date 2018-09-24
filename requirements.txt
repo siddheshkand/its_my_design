@@ -1,4 +1,0 @@
-Gunicorn
-django
-whitenoise
-gunicorn
