@@ -54,6 +54,7 @@ class Category(models.Model):
     created_date = models.DateField()
     logo = models.ImageField(upload_to=category_icon_path)
     rank = models.PositiveIntegerField(null=True)
+    text = models.TextField(null=True)
 
     def __str__(self):
         return self.name + ' ' + str(self.rank)
