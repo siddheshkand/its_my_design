@@ -1,4 +1,6 @@
-{% load static %}
+{% load staticfiles %}
+{% load imagefit %}
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -163,7 +165,7 @@
                                     frameborder="0" allow="autoplay; encrypted-media"
                                     style="display: inline;object-fit: cover;"></iframe>
                         {% else %}
-                            <img src="{{ category.media.url }}" height="70%" width="100%" style="display: inline;object-fit: cover;
+                            <img src="{{ category.media.url|resize:'320x240' }}" height="70%" width="100%" style="display: inline;object-fit: cover;
 "><br>
                         {% endif %}
                         <h3>{{ category.name }}</h3>

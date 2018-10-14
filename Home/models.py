@@ -6,6 +6,15 @@ from django.db import models
 def category_icon_path(instance, filename):
     extension = filename.split('.')
     extension = extension[len(extension) - 1]
+    test = instance.name
+    name = ''.join(e for e in test if e.isalnum())
+    print(name)
+    return 'Media/Categories/{0}/{1}.{2}'.format(name, name, extension)
+
+
+def thumbnail_category_icon_path(instance, filename):
+    extension = filename.split('.')
+    extension = extension[len(extension) - 1]
     name = instance.name
     name = name.replace(" ", "")
     return 'Media/Categories/{0}/{1}.{2}'.format(name, name, extension)
@@ -15,8 +24,9 @@ def project_media_path(instance, filename):
     extension = filename.split('.')
     extension = extension[len(extension) - 1]
     name = instance.name
-    name = name.replace(" ", "")
-    return 'Media/Categories/{0}/{1}/{2}.{3}'.format(instance.category.name.replace(" ", ""), name, name,
+    name = ''.join(e for e in name if e.isalnum())
+    return 'Media/Categories/{0}/{1}/{2}.{3}'.format(''.join(e for e in instance.category.name if e.isalnum()), name,
+                                                     name,
                                                      extension.lower())
 
 
@@ -53,14 +63,14 @@ class Project(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=500, blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    media = models.FileField(upload_to=project_media_path,default=None,blank=True)
+    media = models.FileField(upload_to=project_media_path, default=None, blank=True)
     media_type = models.BooleanField(default=0)
     youtube_url = models.URLField(null=True, blank=True)
 
     def clean(self):
 
         if self.youtube_url:
-            self.media_type==1
+            self.media_type == 1
         else:
             video_extensions = ['mp4', 'mov', 'avi', 'mpg', 'wmv']
             image_extensions = ['jpeg', 'jpg', 'pnndfghjg']

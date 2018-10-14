@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Home.apps.HomeConfig',
+    'imagefit'
 ]
 
 MIDDLEWARE = [
@@ -126,6 +127,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '')
+
+IMAGEFIT_ROOT = os.path.join(BASE_DIR, '')
+
 
 #Email Configuration
 

@@ -7,6 +7,7 @@ from its_my_design import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^imagefit/', include('imagefit.urls')),
     url(r'^', include('Home.urls')),
 
 ]
