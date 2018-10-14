@@ -38,7 +38,7 @@ for root, dirs, files in os.walk("/home/rahul/Projects/its_my_design/Content/mat
     for file in files:
         # if root.split('/').__len__() >= 9:
         if file.split('.')[1].lower() in ['jpeg', 'jpg', 'png']:
-            print(root + file)
+            # print(root + file)
             compress_image(root, file)
             # else:
             #     original_file_path = root + '/' + file

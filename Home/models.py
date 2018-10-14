@@ -8,7 +8,7 @@ def category_icon_path(instance, filename):
     extension = extension[len(extension) - 1]
     test = instance.name
     name = ''.join(e for e in test if e.isalnum())
-    print(name)
+    # print(name)
     return 'Media/Categories/{0}/{1}.{2}'.format(name, name, extension)
 
 

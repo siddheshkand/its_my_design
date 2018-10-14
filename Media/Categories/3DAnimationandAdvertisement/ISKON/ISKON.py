@@ -30,7 +30,7 @@ for i in range(t):
         for k in range(n - j):
             temp = []
             for l in range(j + 1):
-                print(j, k, l)
+                # print(j, k, l)
                 temp.append(arr[l + k])
             tot.append(temp)
     fin = [0] * n
@@ -43,5 +43,5 @@ for i in range(t):
             answer += each[each_li] * fin[each_li]
             # print(answer)
             # print(each[each_li], fin[each_li])
-    print(answer % 1000000007)
+    # print(answer % 1000000007)
     # print(tot)

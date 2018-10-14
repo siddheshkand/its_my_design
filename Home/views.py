@@ -25,7 +25,7 @@ def work(request):
             'category': category_obj
         })
     # projects = sorted(projects,key=lambda x:x.rank)
-    print(category_obj.text)
+    # print(category_obj.text)
     return render(request, "work.html", {
         'project_type_name': category_obj,
         'all_category': projects,
