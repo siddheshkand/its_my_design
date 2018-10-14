@@ -340,15 +340,15 @@
                 <div class="col-forth" style="width:{{ width_percent }}%">
                     <div class="project animate-box hover-style work-box"
                          style="background-image: url({{ category.logo.url }});">
-                        {% ifequal category.name "Election Campaign" %}
-                            <a href="{% url 'home:contact' %}" class="desc hover-none">
-                                <h4 class="for-mobile">{{ category.name }}</h4>
-                            </a>
-                        {% else %}
+{#                        {% ifequal category.name "Election Campaign" %}#}
+{#                            <a href="{% url 'home:election_campaign' %}" class="desc hover-none">#}
+{#                                <h4 class="for-mobile">{{ category.name }}</h4>#}
+{#                            </a>#}
+{#                        {% else %}#}
                             <a href="/work/?category={{ category.name }}" class="desc hover-none">
                                 <h4 class="for-mobile">{{ category.name }}</h4>
                             </a>
-                        {% endifequal %}
+{#                        {% endifequal %}#}
                     </div>
                 </div>
             {% endfor %}

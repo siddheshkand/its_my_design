@@ -20,9 +20,14 @@ def work(request):
     # all category same as above
     category_obj = get_object_or_404(Category, name=category)
     projects = category_obj.project_set.all()
+    if projects.__len__() == 0:
+        return render(request, 'election_campaign.html', {
+            'category': category_obj
+        })
     # projects = sorted(projects,key=lambda x:x.rank)
+    print(category_obj.text)
     return render(request, "work.html", {
-        'project_type_name': category,
+        'project_type_name': category_obj,
         'all_category': projects,
     })
 
