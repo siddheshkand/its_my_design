@@ -198,6 +198,10 @@
                 width: 140px;
             }
         }
+
+        .project-div:hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -336,7 +340,7 @@
 
         <div class="project-content">
             {% for category in all_category %}
-                <div class="col-forth" style="width:{{ width_percent }}%">
+                <div class="col-forth project-div" style="width:{{ width_percent }}%;" onclick="gotoCategories(this)">
                     <div class="project animate-box hover-style work-box"
                          style="background-image: url({{ category.logo.url }});">
                         {% ifequal category.name "Election Campaign" %}
@@ -505,6 +509,12 @@
         delay: 30,
         time: 14000
     });
+
+    function gotoCategories(element) {
+        console.log(element.querySelector(".desc").href);
+        window.location = element.querySelector(".desc").href;
+    }
+
 </script>
 </body>
 </html>
