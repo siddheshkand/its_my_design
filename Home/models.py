@@ -71,7 +71,7 @@ class Project(models.Model):
     def clean(self):
 
         if self.youtube_url:
-            self.media_type == 1
+            self.media_type = 1
         else:
             video_extensions = ['mp4', 'mov', 'avi', 'mpg', 'wmv']
             image_extensions = ['jpeg', 'jpg', 'pnndfghjg']
